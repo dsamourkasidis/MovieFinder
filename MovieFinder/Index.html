@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body ng-app="MovieFind">
+    <p> Enter your name: <input type="text" ng-model="name" /> </p> 
+
+    <p> Hi {{name }}</p>
+    <br />
+    <div ng-controller="MainController">
+        <button ng-click="FindRand()"> What movie should i watch??</button>
+        <div ng-hide="dataLoaded" float="right">
+            <img src="hourglass.svg" width="50" />
+        </div>
+            <br /><br />
+        <div ng-show="dataLoaded">
+            <h2> Title:{{movie.Title}} </h2>
+            <img ng-src="{{movie.Poster}}" />
+        </div>
+        <br />
+        {{error}}
+
+    </div>
+    <!-- Libraries -->
+    <script src="scripts/angular.min.js"> </script>
+    <!-- Modules -->
+    <script src="App.js"> </script>
+
+    <!-- Controllers -->
+    <script src="Controllers/Maincontroller.js"></script>
+    <!-- Services -->
+    <script src="services/RandomMovie.js"></script>
+
+
+</body>
+</html>
