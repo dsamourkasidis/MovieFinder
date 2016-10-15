@@ -1,6 +1,8 @@
-﻿app.service('RandomMovie', function ($http) {
+﻿// Request a random Movie from omdbapi
+app.service('RandomMovie', function ($http) {
     return {
         GetRandomMovie: function () {
+            //Generate a random id
                 var id = Math.floor(Math.random() * 3900000);
                 if (id.toString().length < 7) {
                     do {

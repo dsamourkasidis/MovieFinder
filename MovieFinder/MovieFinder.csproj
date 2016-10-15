@@ -96,7 +96,8 @@
   <ItemGroup>
     <Content Include="App.js" />
     <Content Include="Controllers\MainController.js" />
-    <Content Include="hourglass.svg" />
+    <Content Include="Images\hourglass.svg" />
+    <Content Include="Images\btn.jpg" />
     <Content Include="Index.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -127,6 +128,9 @@
     <Content Include="scripts\angular-scenario.js" />
     <Content Include="scripts\angular-touch.js" />
     <Content Include="scripts\angular-touch.min.js" />
+    <Content Include="styles\style.css" />
+    <Content Include="json\trivia.json" />
+    <Content Include="Images\body.png" />
     <None Include="_references.js" />
     <None Include="scripts\angular.intellisense.js" />
     <Content Include="scripts\angular.js" />
@@ -921,7 +925,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>62116</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62116/</IISUrl>
+          <IISUrl>http://localhost:49403/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

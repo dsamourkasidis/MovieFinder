@@ -3,31 +3,37 @@
 <head>
     <title></title>
 	<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 <body ng-app="MovieFind">
-    <p> Enter your name: <input type="text" ng-model="name" /> </p> 
-
-    <p> Hi {{name }}</p>
-    <br />
-    <div ng-controller="MainController">
-        <button ng-click="FindRand()"> What movie should i watch??</button>
-        <div ng-hide="dataLoaded" float="right">
-            <img src="hourglass.svg" width="50" />
+    <div class="wrapper" ng-controller="MainController">
+        <div class="btn">
+            <button ng-click="FindRand()"> What movie to<br />watch??</button>
+        </div>
+        <div class="trivia" ng-hide="dataLoaded" float="right" ng-cloak>
+            <img src="/Images/hourglass.svg" width="50" />
+            <span> Did you know..... <br /> {{trivia}} </span>
         </div>
             <br /><br />
-        <div ng-show="dataLoaded">
-            <h2> Title:{{movie.Title}} </h2>
-            <img ng-src="{{movie.Poster}}" />
+        <div class="poster" ng-show="dataLoaded">
+            <img id="poster" ng-src="{{movie.Poster}}" />
         </div>
-        <br />
-        {{error}}
-
+        <div class="movie" ng-show="movie.Response && dataLoaded"  ng-cloak>
+            <h2>{{movie.Title}} ({{movie.Year}})</h2>
+            <h5>{{movie.Rated}} | {{movie.Runtime}} | {{movie.Genre}} | {{movie.Released}}</h5>
+            <p>{{movie.Plot}}</p>
+            <ul>
+                <li> <b> Director:</b> {{movie.Director}}</li>
+                <li> <b> Writer:</b> {{movie.Writer}}</li>
+                <li> <b> Stars: </b> {{movie.Actors}}</li>
+            </ul>
+            <h4> IMDb Rating: {{movie.imdbRating}} / 10 </h4>
+        </div>
     </div>
     <!-- Libraries -->
     <script src="scripts/angular.min.js"> </script>
     <!-- Modules -->
     <script src="App.js"> </script>
-
     <!-- Controllers -->
     <script src="Controllers/Maincontroller.js"></script>
     <!-- Services -->
